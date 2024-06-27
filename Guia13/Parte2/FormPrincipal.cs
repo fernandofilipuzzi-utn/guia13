@@ -57,9 +57,9 @@ namespace Parte2
 
             int cp;
             double peso;
-            c.CantidadDeCorrespondenciaPorEmpesa(empresa, out cp, out peso);
+            c.CorrespondenciaConMayorCostoPorEmpresa(empresa, out cp, out peso);
             int cantidadCartas = c.CantidadDeCorrespondenciaPorEmpesa(empresa);
-            double montoRecaudado = c.RecaudacionPorEmpesa(empresa);
+            double montoRecaudado = c.RecaudacionPorEmpresa(empresa);
 
             fVer.lbResultados.Items.Add($"Resultados:");
 

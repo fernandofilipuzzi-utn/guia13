@@ -13,17 +13,18 @@ namespace Parte2.Models
         public double[] PesosGr = new double[1000];
         public int[] EmpresasDistribuccion = new int[1000];
         public double[] Pagos = new double[1000];
+        public bool[] SonCertificadas = new bool[1000];
         public int Contador = 0;
 
         public void Despachar(int codigoPostal, double peso, int empresaDistribucion,
                                 bool EsCertificada,
-                                ref double CostoBase, ref double IVA, 
+                                ref double CostoBase, ref double IVA,
                                 ref double CostoAPagar)
         {
             CodigosPostales[Contador] = codigoPostal;
             PesosGr[Contador] = peso;
             EmpresasDistribuccion[Contador] = empresaDistribucion;
-
+            SonCertificadas[Contador] = EsCertificada;
 
             #region calculo del los costos
             double Tarifa = 0.5;
@@ -39,7 +40,7 @@ namespace Parte2.Models
             Contador++;
             #endregion
         }
-
+             
         public int CantidadDeCorrespondenciaPorEmpesa(int nroEmpresa)
         {
             int cantidad = 0;
@@ -50,8 +51,17 @@ namespace Parte2.Models
             }
             return cantidad;
         }
-
-        public void CantidadDeCorrespondenciaPorEmpesa(int nroEmpresa, out int cp, out double peso)
+        public double RecaudacionPorEmpresa(int nroEmpresa)
+        {
+            double recaudacion = 0;
+            for (int n = 0; n < Contador; n++)
+            {
+                if (EmpresasDistribuccion[n] == nroEmpresa)
+                    recaudacion += Pagos[n];
+            }
+            return recaudacion;
+        }
+        public void CorrespondenciaConMayorCostoPorEmpresa( int nroEmpresa, out int cp, out double peso)
         {
             cp = -1;
             peso = 0;
@@ -72,29 +82,6 @@ namespace Parte2.Models
             }
         }
 
-        public double RecaudacionPorEmpesa(int nroEmpresa)
-        {
-            double recaudacion = 0;
-            for (int n = 0; n < Contador; n++)
-            {
-                if (EmpresasDistribuccion[n] == nroEmpresa)
-                    recaudacion += Pagos[n]; 
-            }
-            return recaudacion;
-        }
-
-        public int CorrespondenciaPorEmpesa(int nroEmpresa)
-        {
-            
-            int cartas = 0;
-            for (int n = 0; n < Contador; n++)
-            {
-                if (EmpresasDistribuccion[n] == nroEmpresa)
-                    cartas++;
-            }
-            return cartas;
-        }
-
         public double RecaudacionTotal()
         {
             double recaudacion = 0;
@@ -104,7 +91,7 @@ namespace Parte2.Models
             }
             return recaudacion;
         }
-
+              
         /*
         public int TransporteConMayorCorrespondencia()
         {

@@ -31,8 +31,8 @@
             this.btnAtención = new System.Windows.Forms.Button();
             this.btnVerResultadosPorLote = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbEmpresaResumen = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.tbEmpresaResumen = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,14 +72,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Por Empresa de distribución";
             // 
-            // tbEmpresaResumen
-            // 
-            this.tbEmpresaResumen.Location = new System.Drawing.Point(19, 57);
-            this.tbEmpresaResumen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbEmpresaResumen.Name = "tbEmpresaResumen";
-            this.tbEmpresaResumen.Size = new System.Drawing.Size(148, 26);
-            this.tbEmpresaResumen.TabIndex = 5;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(189, 122);
@@ -91,11 +83,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // tbEmpresaResumen
+            // 
+            this.tbEmpresaResumen.Location = new System.Drawing.Point(19, 57);
+            this.tbEmpresaResumen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbEmpresaResumen.Name = "tbEmpresaResumen";
+            this.tbEmpresaResumen.Size = new System.Drawing.Size(148, 26);
+            this.tbEmpresaResumen.TabIndex = 5;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 362);
+            this.ClientSize = new System.Drawing.Size(418, 350);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtención);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
