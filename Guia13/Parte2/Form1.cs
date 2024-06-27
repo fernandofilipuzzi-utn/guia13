@@ -16,22 +16,5 @@ namespace Parte2
         {
             InitializeComponent();
         }
-
-        private void btnAtCliente_Click(object sender, EventArgs e)
-        {
-            FormDespacho modalDespacho = new FormDespacho();
-            while (modalDespacho.ShowDialog() == DialogResult.OK)
-            {
-                int CP = Convert.ToInt32(modalDespacho.tbCP.Text);
-                int Peso = Convert.ToInt32(modalDespacho.tbPesogr.Text);
-                int Empresa = Convert.ToInt32(modalDespacho.tbNempresa.Text);
-
-                bool Cert = modalDespacho.cbCertificada.Checked;                
-
-
-            }
-
-
-        }
     }
 }

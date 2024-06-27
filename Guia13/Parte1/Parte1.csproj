@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D8C41B2-450D-4F43-8944-5B2F50D2BE34}</ProjectGuid>
+    <ProjectGuid>{783B693A-22A1-46A3-AABE-3FDB265034BE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Parte1</RootNamespace>
     <AssemblyName>Parte1</AssemblyName>
@@ -48,8 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="pseint\Parte1.psc" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
