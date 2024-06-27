@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8B5C0E8E-D6F6-4459-961F-AF5873F7FEA2}</ProjectGuid>
+    <ProjectGuid>{B3113CBB-F0F7-4786-BBD8-0A69EED3E929}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Parte2</RootNamespace>
     <AssemblyName>Parte2</AssemblyName>
@@ -46,14 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDespacho.Designer.cs">
+      <DependentUpon>FormDespacho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVerResultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVerResultados.Designer.cs">
+      <DependentUpon>FormVerResultados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Controlador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDespacho.resx">
+      <DependentUpon>FormDespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVerResultados.resx">
+      <DependentUpon>FormVerResultados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,9 +94,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="uml\controlador.uml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="uml\controlador.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

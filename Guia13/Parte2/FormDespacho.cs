@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Parte2
 {
-    public partial class Form1 : Form
+    public partial class FormDespacho : Form
     {
-        public Form1()
+        public FormDespacho()
         {
             InitializeComponent();
         }
+
+       
     }
 }
