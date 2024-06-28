@@ -16,10 +16,7 @@ namespace Parte2.Models
         public bool[] SonCertificadas = new bool[1000];
         public int Contador = 0;
 
-        public void Despachar(int codigoPostal, double peso, int empresaDistribucion,
-                                bool EsCertificada,
-                                ref double CostoBase, ref double IVA,
-                                ref double CostoAPagar)
+        public void Despachar(int codigoPostal, double peso, int empresaDistribucion, bool EsCertificada, ref double CostoBase, ref double IVA, ref double CostoAPagar)
         {
             CodigosPostales[Contador] = codigoPostal;
             PesosGr[Contador] = peso;
