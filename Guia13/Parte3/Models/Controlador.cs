@@ -9,80 +9,74 @@ namespace Parte3.Models
 {
     public class Controlador
     {
-        private Despacho[] Despachos = new Despacho[1000];
-        public int Contador { get; private set; } = 0;
+        public int[] CodigosPostales = new int[1000];
+        public double[] PesosGr = new double[1000];
+        public int[] EmpresasDistribuccion = new int[1000];
+        public double[] Pagos = new double[1000];
+        public bool[] SonCertificadas = new bool[1000];
+        public int Contador = 0;
 
-
-        public Despacho VerDespacho(int idx)
+        public void Despachar(int codigoPostal, double peso, int empresaDistribucion, bool EsCertificada, ref double CostoBase, ref double IVA, ref double CostoAPagar)
         {
-            if(idx<Contador)
-                return Despachos[idx];
-            return null;
-        }
+            CodigosPostales[Contador] = codigoPostal;
+            PesosGr[Contador] = peso;
+            EmpresasDistribuccion[Contador] = empresaDistribucion;
+            SonCertificadas[Contador] = EsCertificada;
 
-        public Despacho Despachar(int codigoPostal, double peso, int empresaDistribucion,
-                                bool EsCertificada)
-        {
-            Despacho nuevo = new Despacho(codigoPostal, peso, 
-                                          empresaDistribucion, EsCertificada);
+            #region calculo del los costos
+            double Tarifa = 0.5;
+            if (EsCertificada)
+            {
+                Tarifa = 1;
+            }
+            CostoBase = peso * Tarifa;
+            IVA = CostoBase * 21d / 100;
+            CostoAPagar = CostoBase + IVA;
 
-            Despachos[Contador] = nuevo;
+            Pagos[Contador] = CostoAPagar;
             Contador++;
-
-            return nuevo;
+            #endregion
         }
-
+             
         public int CantidadDeCorrespondenciaPorEmpesa(int nroEmpresa)
         {
             int cantidad = 0;
             for (int n = 0; n < Contador; n++)
             {
-                if (Despachos[n].EmpresaDistribuccion == nroEmpresa)
+                if (EmpresasDistribuccion[n] == nroEmpresa)
                     cantidad++;
             }
             return cantidad;
         }
-
-        public Despacho CartaMayorCostoPorEmpesa(int nroEmpresa)
-        {
-            Despacho mayor = null;
-                       
-            for (int n = 0; n < Contador; n++)
-            {
-                int m = 0;
-                if (Despachos[n].EmpresaDistribuccion == nroEmpresa)
-                {
-                    if (m == 0 || mayor.Pago < Despachos[n].Pago)
-                    {
-                        mayor = Despachos[n];
-                        m++;
-                    }
-                }
-            }
-
-            return mayor;
-        }
-
-        public double RecaudacionPorEmpesa(int nroEmpresa)
+        public double RecaudacionPorEmpresa(int nroEmpresa)
         {
             double recaudacion = 0;
             for (int n = 0; n < Contador; n++)
             {
-                if (Despachos[n].EmpresaDistribuccion == nroEmpresa)
-                    recaudacion += Despachos[n].Pago; 
+                if (EmpresasDistribuccion[n] == nroEmpresa)
+                    recaudacion += Pagos[n];
             }
             return recaudacion;
         }
-
-        public int CorrespondenciaPorEmpesa(int nroEmpresa)
+        public void CorrespondenciaConMayorCostoPorEmpresa( int nroEmpresa, out int cp, out double peso)
         {
-            int cartas = 0;
+            cp = -1;
+            peso = 0;
+
+            double costo = 0;
+            int m = 0;
             for (int n = 0; n < Contador; n++)
             {
-                if (Despachos[n].EmpresaDistribuccion == nroEmpresa)
-                    cartas++;
+                if (EmpresasDistribuccion[n] == nroEmpresa)
+                {
+                    if (m == 0 && Pagos[n] > costo)
+                    {
+                        cp = CodigosPostales[n];
+                        peso = PesosGr[n];
+                        m++;
+                    }
+                }
             }
-            return cartas;
         }
 
         public double RecaudacionTotal()
@@ -90,11 +84,12 @@ namespace Parte3.Models
             double recaudacion = 0;
             for (int n = 0; n < Contador; n++)
             {
-                recaudacion += Despachos[n].Pago;
+                recaudacion += Pagos[n];
             }
             return recaudacion;
         }
-
+              
+        /*
         public int TransporteConMayorCorrespondencia()
         {
             int nroTMayor = -1;
@@ -108,8 +103,8 @@ namespace Parte3.Models
             }
             return nroTMayor;
         }
-  
-        /*
+        */
+
         public int TransporteConMayorCorrespondencia()
         {
             int nroTMayor = -1;
@@ -148,8 +143,43 @@ namespace Parte3.Models
             }
             return nroTMayor;
         }
-        */
 
+        public int[] PrepararDistribucionAEmpresa(int empresa, ref int cantidad)
+        {
+            cantidad = 0;
+            int[] idxs =new int[1000];
+                       
+            for (int n = 0; n < Contador; n++)
+            {
+                if (EmpresasDistribuccion[n] == empresa)
+                {
+                    idxs[cantidad] = n;
+                    cantidad++;
+                }
+            }
 
+            Ordenar(idxs, cantidad);
+
+            return idxs;
+        }
+
+        private void Ordenar(int[] idxs, int cantidad)
+        {
+            for (int n = 0; n < cantidad - 1; n++)
+            {
+                int cpn = CodigosPostales[n];
+
+                for (int m = n + 1; m < cantidad; m++)
+                {
+                    int cps = CodigosPostales[m];
+                    if (cpn > cps)
+                    {
+                        int aux = idxs[n];
+                        idxs[n] = idxs[m];
+                        idxs[m] = aux;
+                    }
+                }
+            }
+        }
     }
 }

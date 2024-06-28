@@ -22,7 +22,7 @@ namespace Parte2
             
         }
 
-        private void btnAtención_Click(object sender, EventArgs e)
+        private void btnAtender_Click(object sender, EventArgs e)
         {
             FormDespacho formDespacho = new FormDespacho();
 

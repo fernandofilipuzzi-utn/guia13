@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Parte3
 {
-    public partial class FormDespacho : Form
+    public partial class FormVerResultados : Form
     {
-        public FormDespacho()
+        public FormVerResultados()
         {
             InitializeComponent();
         }
-
-       
     }
 }

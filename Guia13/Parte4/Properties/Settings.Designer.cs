@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Parte2.Properties
+namespace Parte3.Properties
 {
 
 
