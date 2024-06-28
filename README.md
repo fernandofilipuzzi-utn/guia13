@@ -1,1 +1,1 @@
-# guia13
+# guia13 repaso de parcial 1 y parcial 2 
