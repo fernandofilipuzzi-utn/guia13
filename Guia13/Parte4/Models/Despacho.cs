@@ -17,9 +17,7 @@ namespace Parte4.Models
         public double CostoBase { get; private set; }
         public double IVA { get; private set; }
         public double CostoAPagar { get; private  set; }
-
-        
-
+                
         public Despacho(int codigoPostal, double PesoGr, int EmpresaDistribucion, bool EsCertificada)
         { 
             this.CodigoPostal= codigoPostal;

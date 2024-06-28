@@ -38,13 +38,15 @@
             this.chkTipoEnvio = new System.Windows.Forms.CheckBox();
             this.tbPesoEnGramos = new System.Windows.Forms.TextBox();
             this.tbCodigoPostal = new System.Windows.Forms.TextBox();
+            this.tbIdentificador = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(224, 231);
+            this.button2.Location = new System.Drawing.Point(223, 260);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 35);
@@ -55,7 +57,7 @@
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(42, 231);
+            this.button1.Location = new System.Drawing.Point(51, 260);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 35);
@@ -65,6 +67,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.tbIdentificador);
             this.groupBox1.Controls.Add(this.cbEmpresa);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -76,7 +80,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(364, 217);
+            this.groupBox1.Size = new System.Drawing.Size(364, 245);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
@@ -88,7 +92,7 @@
             "1",
             "2",
             "3"});
-            this.cbEmpresa.Location = new System.Drawing.Point(182, 122);
+            this.cbEmpresa.Location = new System.Drawing.Point(191, 163);
             this.cbEmpresa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbEmpresa.Name = "cbEmpresa";
             this.cbEmpresa.Size = new System.Drawing.Size(148, 28);
@@ -97,7 +101,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 134);
+            this.label3.Location = new System.Drawing.Point(35, 175);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 20);
@@ -107,7 +111,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 88);
+            this.label2.Location = new System.Drawing.Point(35, 129);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 20);
@@ -117,7 +121,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 48);
+            this.label1.Location = new System.Drawing.Point(35, 89);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 20);
@@ -127,7 +131,7 @@
             // chkTipoEnvio
             // 
             this.chkTipoEnvio.AutoSize = true;
-            this.chkTipoEnvio.Location = new System.Drawing.Point(186, 171);
+            this.chkTipoEnvio.Location = new System.Drawing.Point(195, 212);
             this.chkTipoEnvio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chkTipoEnvio.Name = "chkTipoEnvio";
             this.chkTipoEnvio.Size = new System.Drawing.Size(136, 24);
@@ -137,7 +141,7 @@
             // 
             // tbPesoEnGramos
             // 
-            this.tbPesoEnGramos.Location = new System.Drawing.Point(182, 83);
+            this.tbPesoEnGramos.Location = new System.Drawing.Point(191, 124);
             this.tbPesoEnGramos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbPesoEnGramos.Name = "tbPesoEnGramos";
             this.tbPesoEnGramos.Size = new System.Drawing.Size(148, 26);
@@ -145,17 +149,35 @@
             // 
             // tbCodigoPostal
             // 
-            this.tbCodigoPostal.Location = new System.Drawing.Point(182, 43);
+            this.tbCodigoPostal.Location = new System.Drawing.Point(191, 84);
             this.tbCodigoPostal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbCodigoPostal.Name = "tbCodigoPostal";
             this.tbCodigoPostal.Size = new System.Drawing.Size(148, 26);
             this.tbCodigoPostal.TabIndex = 0;
             // 
+            // tbIdentificador
+            // 
+            this.tbIdentificador.Location = new System.Drawing.Point(191, 48);
+            this.tbIdentificador.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbIdentificador.Name = "tbIdentificador";
+            this.tbIdentificador.Size = new System.Drawing.Size(148, 26);
+            this.tbIdentificador.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(35, 51);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Identificador";
+            // 
             // FormDespacho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 284);
+            this.ClientSize = new System.Drawing.Size(384, 306);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
@@ -183,5 +205,7 @@
         public System.Windows.Forms.TextBox tbCodigoPostal;
         public System.Windows.Forms.ComboBox cbEmpresa;
         public System.Windows.Forms.CheckBox chkTipoEnvio;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox tbIdentificador;
     }
 }

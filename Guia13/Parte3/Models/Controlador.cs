@@ -9,6 +9,7 @@ namespace Parte3.Models
 {
     public class Controlador
     {
+        public int[] Indentificadores = new int[1000];
         public int[] CodigosPostales = new int[1000];
         public double[] PesosGr = new double[1000];
         public int[] EmpresasDistribuccion = new int[1000];
@@ -16,8 +17,9 @@ namespace Parte3.Models
         public bool[] SonCertificadas = new bool[1000];
         public int Contador = 0;
 
-        public void Despachar(int codigoPostal, double peso, int empresaDistribucion, bool EsCertificada, ref double CostoBase, ref double IVA, ref double CostoAPagar)
+        public void Despachar(int id, int codigoPostal, double peso, int empresaDistribucion, bool EsCertificada, ref double CostoBase, ref double IVA, ref double CostoAPagar)
         {
+            Indentificadores[Contador] = id;
             CodigosPostales[Contador] = codigoPostal;
             PesosGr[Contador] = peso;
             EmpresasDistribuccion[Contador] = empresaDistribucion;
@@ -180,6 +182,19 @@ namespace Parte3.Models
                     }
                 }
             }
+        }
+
+        public int BuscarCorrespondencia(int identificador)
+        {
+            int idx = -1;
+            int n = 0;
+            while (n < Contador && idx==-1)
+            {
+                if (Indentificadores[n] == identificador)
+                    idx = n;
+                n++;
+            }
+            return idx;
         }
     }
 }

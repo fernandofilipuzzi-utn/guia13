@@ -31,10 +31,15 @@
             this.btnAtender = new System.Windows.Forms.Button();
             this.btnVerResultadosPorLote = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tbEmpresaResumen = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbIdentificador = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAtender
@@ -74,6 +79,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Por Empresa de distribución (de 1 a 3)";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Número de empresa:";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(212, 88);
@@ -93,20 +107,54 @@
             this.tbEmpresaResumen.Size = new System.Drawing.Size(205, 26);
             this.tbEmpresaResumen.TabIndex = 5;
             // 
-            // label1
+            // groupBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 20);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Número de empresa:";
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.tbIdentificador);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Location = new System.Drawing.Point(13, 250);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(392, 136);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Buscar correspondencia";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(161, 20);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Número identificación";
+            // 
+            // tbIdentificador
+            // 
+            this.tbIdentificador.Location = new System.Drawing.Point(179, 52);
+            this.tbIdentificador.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbIdentificador.Name = "tbIdentificador";
+            this.tbIdentificador.Size = new System.Drawing.Size(205, 26);
+            this.tbIdentificador.TabIndex = 5;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(196, 88);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(141, 37);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 251);
+            this.ClientSize = new System.Drawing.Size(425, 396);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtender);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,6 +164,8 @@
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -127,6 +177,10 @@
         private System.Windows.Forms.TextBox tbEmpresaResumen;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbIdentificador;
+        private System.Windows.Forms.Button button3;
     }
 }
 

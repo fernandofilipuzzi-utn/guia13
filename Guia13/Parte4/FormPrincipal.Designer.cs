@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tbEmpresaResumen = new System.Windows.Forms.TextBox();
             this.btnVerResultadosPorLote = new System.Windows.Forms.Button();
             this.btnAtender = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Por Empresa de distribución";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Número de empresa:";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(247, 75);
@@ -61,6 +70,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Preparar Distribución";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tbEmpresaResumen
             // 
@@ -79,6 +89,7 @@
             this.btnVerResultadosPorLote.TabIndex = 4;
             this.btnVerResultadosPorLote.Text = "Ver Resultados";
             this.btnVerResultadosPorLote.UseVisualStyleBackColor = true;
+            this.btnVerResultadosPorLote.Click += new System.EventHandler(this.btnVerResultadosPorLote_Click);
             // 
             // btnAtender
             // 
@@ -90,15 +101,6 @@
             this.btnAtender.Text = "Atención al Cliente";
             this.btnAtender.UseVisualStyleBackColor = true;
             this.btnAtender.Click += new System.EventHandler(this.btnAtender_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 20);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Número de empresa:";
             // 
             // FormPrincipal
             // 

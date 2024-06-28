@@ -58,6 +58,12 @@
     <Compile Include="FormDespacho.Designer.cs">
       <DependentUpon>FormDespacho.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVerResultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVerResultados.Designer.cs">
+      <DependentUpon>FormVerResultados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Controlador.cs" />
     <Compile Include="Models\Despacho.cs" />
     <Compile Include="Program.cs" />
@@ -67,6 +73,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDespacho.resx">
       <DependentUpon>FormDespacho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVerResultados.resx">
+      <DependentUpon>FormVerResultados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

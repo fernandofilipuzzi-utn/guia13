@@ -43,7 +43,7 @@ namespace Parte4.Models
             return cantidad;
         }
 
-        public Despacho CartaMayorCostoPorEmpesa(int nroEmpresa)
+        public Despacho CorrespondenciaConMayorCostoPorEmpresa(int nroEmpresa)
         {
             Despacho mayor = null;
                        
@@ -68,7 +68,7 @@ namespace Parte4.Models
             double recaudacion = 0;
             for (int n = 0; n < Contador; n++)
             {
-                if (Despachos[n].EmpresaDistribuccion == nroEmpresa)
+                if (Despachos[n].Empresa == nroEmpresa)
                     recaudacion += Despachos[n].Pago; 
             }
             return recaudacion;
@@ -79,7 +79,7 @@ namespace Parte4.Models
             int cartas = 0;
             for (int n = 0; n < Contador; n++)
             {
-                if (Despachos[n].EmpresaDistribuccion == nroEmpresa)
+                if (Despachos[n].Empresa == nroEmpresa)
                     cartas++;
             }
             return cartas;
@@ -108,7 +108,7 @@ namespace Parte4.Models
             }
             return nroTMayor;
         }
-  
+
         /*
         public int TransporteConMayorCorrespondencia()
         {
@@ -150,6 +150,39 @@ namespace Parte4.Models
         }
         */
 
+        public Despacho[] PrepararDistribucionAEmpresa(int empresa, ref int cantidad)
+        {
+            cantidad = 0;
+            Despacho[] aDistribuir = new Despacho[1000];
 
+            for (int n = 0; n < Contador; n++)
+            {
+                if (Despachos[n].Empresa == empresa)
+                {
+                    aDistribuir[cantidad] = Despachos[n];
+                    cantidad++;
+                }
+            }
+
+            Ordenar(aDistribuir, cantidad);
+
+            return aDistribuir;
+        }
+
+        private void Ordenar(Despacho[] aDistribuir, int cantidad)
+        {
+            for (int n = 0; n < cantidad - 1; n++)
+            {
+                for (int m = n + 1; m < cantidad; m++)
+                {
+                    if (aDistribuir[n].CodigoPostal > aDistribuir[m].CodigoPostal)
+                    {
+                        Despacho aux = aDistribuir[n];
+                        aDistribuir[n] = aDistribuir[m];
+                        aDistribuir[m] = aux;
+                    }
+                }
+            }
+        }
     }
 }

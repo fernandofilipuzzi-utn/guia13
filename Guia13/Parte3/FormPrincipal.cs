@@ -28,24 +28,35 @@ namespace Parte3
 
             while (formDespacho.ShowDialog() == DialogResult.OK)
             {
-                int cp = Convert.ToInt32(formDespacho.tbCodigoPostal.Text);
-                double peso=Convert.ToDouble( formDespacho.tbPesoEnGramos.Text);
-                int empresa=Convert.ToInt32( formDespacho.cbEmpresa.Text);
-                bool esCertificada = formDespacho.chkTipoEnvio.Checked;
+                int id = Convert.ToInt32(formDespacho.tbIdentificador.Text);
 
-                double costoBase = 0d;
-                double costoIVA = 0d;
-                double costoTotal = 0d;
-                c.Despachar(cp, peso, empresa, esCertificada, ref costoBase, ref costoIVA, ref costoTotal);
+                int idx = c.BuscarCorrespondencia(id);
+                if (idx == -1) //significa que no lo encontró
+                {
+                    int cp = Convert.ToInt32(formDespacho.tbCodigoPostal.Text);
+                    double peso = Convert.ToDouble(formDespacho.tbPesoEnGramos.Text);
+                    int empresa = Convert.ToInt32(formDespacho.cbEmpresa.Text);
+                    bool esCertificada = formDespacho.chkTipoEnvio.Checked;
 
-                MessageBox.Show($"BASE: ${costoBase:f2} IVA:${costoIVA:f2} Total:${costoTotal:f2}", "Monto a pagar");
+                    double costoBase = 0d;
+                    double costoIVA = 0d;
+                    double costoTotal = 0d;
+                    c.Despachar(id, cp, peso, empresa, esCertificada, ref costoBase, ref costoIVA, ref costoTotal);
 
-                #region clear
-                formDespacho.tbCodigoPostal.Clear();
-                formDespacho.tbPesoEnGramos.Clear();
-                formDespacho.cbEmpresa.SelectedIndex = -1;
-                formDespacho.chkTipoEnvio.Checked=false;
-                #endregion
+                    MessageBox.Show($"BASE: ${costoBase:f2} IVA:${costoIVA:f2} Total:${costoTotal:f2}", "Monto a pagar");
+
+                    #region clear
+                    formDespacho.tbIdentificador.Clear();
+                    formDespacho.tbCodigoPostal.Clear();
+                    formDespacho.tbPesoEnGramos.Clear();
+                    formDespacho.cbEmpresa.SelectedIndex = -1;
+                    formDespacho.chkTipoEnvio.Checked = false;
+                    #endregion
+                }
+                else
+                {
+                    MessageBox.Show("Error! - El registro fue previamente cargado");
+                }
             }
         }
 
@@ -87,6 +98,29 @@ namespace Parte3
             }
 
             fVer.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormDespacho formDespacho = new FormDespacho();
+
+            int id = Convert.ToInt32(tbIdentificador.Text);
+
+            int idx = c.BuscarCorrespondencia(id);
+            if (idx > -1)
+            {
+                formDespacho.tbIdentificador.Text = c.Indentificadores[idx].ToString("00000000");
+                formDespacho.tbCodigoPostal.Text = c.CodigosPostales[idx].ToString("0000");
+                formDespacho.tbPesoEnGramos.Text = c.PesosGr[idx].ToString("0.00");
+                formDespacho.cbEmpresa.Text = c.EmpresasDistribuccion[idx].ToString();
+                formDespacho.chkTipoEnvio.Checked = c.SonCertificadas[idx];
+
+                formDespacho.ShowDialog();
+            }
+            else 
+            {
+                MessageBox.Show("Registro no encontrado");
+            }
         }
     }
 }
