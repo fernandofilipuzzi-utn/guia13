@@ -232,7 +232,7 @@
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[4]" type="UMLAttribute" guid="3BV5pBT9X0qgeu4VQ9RdigAA">
 <XPD:ATTR name="Name" type="string">SonCertificadas</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">boo</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">bool[]</XPD:ATTR>
 <XPD:REF name="Owner">n4BG0ejPZUeFBW2rm/zi7QAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[5]" type="UMLAttribute" guid="atCDreAljUWUjj/MjgtfSwAA">
