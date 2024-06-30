@@ -34,6 +34,7 @@
             this.tbEmpresaResumen = new System.Windows.Forms.TextBox();
             this.btnVerResultadosPorLote = new System.Windows.Forms.Button();
             this.btnAtender = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +94,7 @@
             // 
             // btnAtender
             // 
-            this.btnAtender.Location = new System.Drawing.Point(273, 17);
+            this.btnAtender.Location = new System.Drawing.Point(33, 14);
             this.btnAtender.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnAtender.Name = "btnAtender";
             this.btnAtender.Size = new System.Drawing.Size(163, 57);
@@ -102,11 +103,22 @@
             this.btnAtender.UseVisualStyleBackColor = true;
             this.btnAtender.Click += new System.EventHandler(this.btnAtender_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(216, 14);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(210, 57);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Ver resumen final";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 231);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtender);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,6 +139,7 @@
         private System.Windows.Forms.Button btnVerResultadosPorLote;
         private System.Windows.Forms.Button btnAtender;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

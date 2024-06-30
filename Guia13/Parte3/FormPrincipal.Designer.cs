@@ -38,13 +38,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbIdentificador = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAtender
             // 
-            this.btnAtender.Location = new System.Drawing.Point(241, 18);
+            this.btnAtender.Location = new System.Drawing.Point(13, 18);
             this.btnAtender.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAtender.Name = "btnAtender";
             this.btnAtender.Size = new System.Drawing.Size(156, 51);
@@ -149,11 +150,22 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(192, 18);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(210, 52);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Ver resumen final";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 396);
+            this.ClientSize = new System.Drawing.Size(416, 396);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtender);
@@ -181,6 +193,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbIdentificador;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
 

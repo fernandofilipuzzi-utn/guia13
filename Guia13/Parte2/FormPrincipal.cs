@@ -88,5 +88,18 @@ namespace Parte2
 
             fVer.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormVerResultados fVer = new FormVerResultados();
+
+            double total = c.RecaudacionTotal();
+            double transporte = c.TransporteConMayorCorrespondencia();
+
+            fVer.lbResultados.Items.Add($"Recaudación total: ${total}");
+            fVer.lbResultados.Items.Add($"Transporte con mayor correspondencia a entregar: ${transporte}");
+
+            fVer.ShowDialog();
+        }
     }
 }
