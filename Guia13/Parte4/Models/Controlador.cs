@@ -9,6 +9,7 @@ namespace Parte4.Models
 {
     public class Controlador
     {
+
         private Despacho[] Despachos = new Despacho[1000];
         public int Contador { get; private set; } = 0;
 
@@ -20,10 +21,10 @@ namespace Parte4.Models
             return null;
         }
 
-        public Despacho Despachar(int codigoPostal, double peso, int empresaDistribucion,
+        public Despacho Despachar(int identificador, int codigoPostal, double peso, int empresaDistribucion,
                                 bool EsCertificada)
         {
-            Despacho nuevo = new Despacho(codigoPostal, peso, 
+            Despacho nuevo = new Despacho(identificador, codigoPostal, peso, 
                                           empresaDistribucion, EsCertificada);
 
             Despachos[Contador] = nuevo;
@@ -52,7 +53,7 @@ namespace Parte4.Models
                 int m = 0;
                 if (Despachos[n].Empresa == nroEmpresa)
                 {
-                    if (m == 0 || mayor.Pago < Despachos[n].Pago)
+                    if (m == 0 || mayor.CostoAPagar < Despachos[n].CostoAPagar )
                     {
                         mayor = Despachos[n];
                         m++;
@@ -69,7 +70,7 @@ namespace Parte4.Models
             for (int n = 0; n < Contador; n++)
             {
                 if (Despachos[n].Empresa == nroEmpresa)
-                    recaudacion += Despachos[n].Pago; 
+                    recaudacion += Despachos[n].CostoAPagar; 
             }
             return recaudacion;
         }
@@ -90,7 +91,7 @@ namespace Parte4.Models
             double recaudacion = 0;
             for (int n = 0; n < Contador; n++)
             {
-                recaudacion += Despachos[n].Pago;
+                recaudacion += Despachos[n].CostoAPagar;
             }
             return recaudacion;
         }
@@ -183,6 +184,19 @@ namespace Parte4.Models
                     }
                 }
             }
+        }
+
+        public int BuscarDespacho(int identificador)
+        {
+            int idx = -1;
+            int n = 0;
+            while (n < Contador && idx == -1)
+            {
+                if (Despachos[n].Identificador == identificador)
+                    idx = n;
+                n++;
+            }
+            return idx;
         }
     }
 }

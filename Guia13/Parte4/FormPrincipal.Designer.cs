@@ -34,8 +34,13 @@
             this.tbEmpresaResumen = new System.Windows.Forms.TextBox();
             this.btnVerResultadosPorLote = new System.Windows.Forms.Button();
             this.btnAtender = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnVerResumenFinal = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbIdentificador = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -103,22 +108,66 @@
             this.btnAtender.UseVisualStyleBackColor = true;
             this.btnAtender.Click += new System.EventHandler(this.btnAtender_Click);
             // 
-            // button2
+            // btnVerResumenFinal
             // 
-            this.button2.Location = new System.Drawing.Point(216, 14);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(210, 57);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Ver resumen final";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnVerResumenFinal.Location = new System.Drawing.Point(216, 14);
+            this.btnVerResumenFinal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnVerResumenFinal.Name = "btnVerResumenFinal";
+            this.btnVerResumenFinal.Size = new System.Drawing.Size(210, 57);
+            this.btnVerResumenFinal.TabIndex = 8;
+            this.btnVerResumenFinal.Text = "Ver resumen final";
+            this.btnVerResumenFinal.UseVisualStyleBackColor = true;
+            this.btnVerResumenFinal.Click += new System.EventHandler(this.btnVerResumenFinal_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.tbIdentificador);
+            this.groupBox2.Controls.Add(this.btnBuscar);
+            this.groupBox2.Location = new System.Drawing.Point(13, 224);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(434, 136);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Buscar correspondencia";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(161, 20);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Número identificación";
+            // 
+            // tbIdentificador
+            // 
+            this.tbIdentificador.Location = new System.Drawing.Point(179, 52);
+            this.tbIdentificador.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbIdentificador.Name = "tbIdentificador";
+            this.tbIdentificador.Size = new System.Drawing.Size(205, 26);
+            this.tbIdentificador.TabIndex = 5;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(196, 88);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(141, 37);
+            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 231);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(454, 366);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnVerResumenFinal);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtender);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,6 +176,8 @@
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -139,7 +190,11 @@
         private System.Windows.Forms.Button btnVerResultadosPorLote;
         private System.Windows.Forms.Button btnAtender;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnVerResumenFinal;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbIdentificador;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
 

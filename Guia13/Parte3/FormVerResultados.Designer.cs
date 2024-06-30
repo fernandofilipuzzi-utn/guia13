@@ -39,13 +39,13 @@
             this.lbResultados.Location = new System.Drawing.Point(11, 14);
             this.lbResultados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbResultados.Name = "lbResultados";
-            this.lbResultados.Size = new System.Drawing.Size(339, 284);
+            this.lbResultados.Size = new System.Drawing.Size(454, 284);
             this.lbResultados.TabIndex = 0;
             // 
             // btnCerrar
             // 
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCerrar.Location = new System.Drawing.Point(122, 308);
+            this.btnCerrar.Location = new System.Drawing.Point(184, 304);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(112, 35);
@@ -57,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 417);
+            this.ClientSize = new System.Drawing.Size(469, 353);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lbResultados);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

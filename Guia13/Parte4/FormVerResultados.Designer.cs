@@ -35,7 +35,7 @@
             // btnCerrar
             // 
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnCerrar.Location = new System.Drawing.Point(150, 288);
+            this.btnCerrar.Location = new System.Drawing.Point(257, 306);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(95, 37);
@@ -50,20 +50,21 @@
             this.lbResultados.Location = new System.Drawing.Point(6, 5);
             this.lbResultados.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.lbResultados.Name = "lbResultados";
-            this.lbResultados.Size = new System.Drawing.Size(396, 284);
+            this.lbResultados.Size = new System.Drawing.Size(619, 284);
             this.lbResultados.TabIndex = 2;
             // 
             // FormVerResultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 342);
+            this.ClientSize = new System.Drawing.Size(630, 360);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lbResultados);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormVerResultados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormVerResultados";
             this.ResumeLayout(false);
 

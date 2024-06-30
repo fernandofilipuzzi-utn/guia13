@@ -89,10 +89,16 @@ namespace Parte2
             int cantidad = 0;
             int[] idxs = c.PrepararDistribucionAEmpresa(empresa, ref cantidad);
 
+            fVer.lbResultados.Items.Add($"CP - Peso - Certificada");
             for (int n = 0; n < cantidad; n++)
             {
                 int idx = idxs[n];
-                fVer.lbResultados.Items.Add($"{c.CodigosPostales[idx]} - {c.PesosGr[idx]:f2}");
+
+                string esCertificada = "No";
+                if (c.SonCertificadas[idx])
+                    esCertificada = "Sí";
+
+                fVer.lbResultados.Items.Add($"{c.CodigosPostales[idx]} - {c.PesosGr[idx]:f2} - {esCertificada}");
             }
 
             fVer.ShowDialog();
@@ -106,7 +112,7 @@ namespace Parte2
             double transporte = c.TransporteConMayorCorrespondencia();
 
             fVer.lbResultados.Items.Add($"Recaudación total: ${total}");
-            fVer.lbResultados.Items.Add($"Transporte con mayor correspondencia a entregar: ${transporte}");
+            fVer.lbResultados.Items.Add($"Transporte con mayor correspondencia a entregar: {transporte}");
 
             fVer.ShowDialog();
         }

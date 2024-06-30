@@ -169,12 +169,15 @@ namespace Parte3.Models
         {
             for (int n = 0; n < cantidad - 1; n++)
             {
-                int cpn = CodigosPostales[n];
+                //int cpn = CodigosPostales[n]; //es un error!
+                int ns = idxs[n];//corrección: indice Actual
 
                 for (int m = n + 1; m < cantidad; m++)
                 {
-                    int cps = CodigosPostales[m];
-                    if (cpn > cps)
+                    //int cps = CodigosPostales[m];
+                    int ms = idxs[m]; //corrección: indice Siguiente
+                    //if (cpn > cps)
+                    if (CodigosPostales[ns] > CodigosPostales[ms])
                     {
                         int aux = idxs[n];
                         idxs[n] = idxs[m];

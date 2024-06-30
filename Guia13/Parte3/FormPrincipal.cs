@@ -19,7 +19,17 @@ namespace Parte3
         public FormPrincipal()
         {
             InitializeComponent();
-            
+
+            //test
+            double costoBase = 0d;
+            double costoIVA = 0d;
+            double costoTotal = 0d;
+            c.Despachar(234, 3137, 126, 1, true, ref costoBase, ref costoIVA, ref costoTotal);
+            c.Despachar(235, 3100, 25, 3, true, ref costoBase, ref costoIVA, ref costoTotal);
+            c.Despachar(237, 3100, 125, 2, true, ref costoBase, ref costoIVA, ref costoTotal);
+            c.Despachar(239, 3137, 123.1, 2, true, ref costoBase, ref costoIVA, ref costoTotal);
+            c.Despachar(244, 3567, 45.7, 1, true, ref costoBase, ref costoIVA, ref costoTotal);
+            c.Despachar(245, 4564, 12.5, 1, true, ref costoBase, ref costoIVA, ref costoTotal);
         }
 
         private void btnAtender_Click(object sender, EventArgs e)
@@ -91,16 +101,22 @@ namespace Parte3
             int cantidad = 0;
             int[] idxs = c.PrepararDistribucionAEmpresa(empresa, ref cantidad);
 
+            fVer.lbResultados.Items.Add($"CP - Peso - Certificada");
             for (int n = 0; n < cantidad; n++)
             {
                 int idx = idxs[n];
-                fVer.lbResultados.Items.Add($"{c.CodigosPostales[idx]} - {c.PesosGr[idx]:f2}");
+
+                string esCertificada = "No";
+                if (c.SonCertificadas[idx])
+                    esCertificada = "Sí";
+
+                fVer.lbResultados.Items.Add($"{c.CodigosPostales[idx]} - {c.PesosGr[idx]:f2} - {esCertificada}");
             }
 
             fVer.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
             FormDespacho formDespacho = new FormDespacho();
 
@@ -114,6 +130,12 @@ namespace Parte3
                 formDespacho.tbPesoEnGramos.Text = c.PesosGr[idx].ToString("0.00");
                 formDespacho.cbEmpresa.Text = c.EmpresasDistribuccion[idx].ToString();
                 formDespacho.chkTipoEnvio.Checked = c.SonCertificadas[idx];
+
+                formDespacho.tbIdentificador.Enabled = false;
+                formDespacho.tbCodigoPostal.Enabled = false;
+                formDespacho.tbPesoEnGramos.Enabled = false;
+                formDespacho.cbEmpresa.Enabled = false;
+                formDespacho.chkTipoEnvio.Enabled = false;
 
                 formDespacho.ShowDialog();
             }
@@ -131,7 +153,7 @@ namespace Parte3
             double transporte = c.TransporteConMayorCorrespondencia();
 
             fVer.lbResultados.Items.Add($"Recaudación total: ${total}");
-            fVer.lbResultados.Items.Add($"Transporte con mayor correspondencia a entregar: ${transporte}");
+            fVer.lbResultados.Items.Add($"Transporte con mayor correspondencia a entregar: {transporte}");
 
             fVer.ShowDialog();
         }
