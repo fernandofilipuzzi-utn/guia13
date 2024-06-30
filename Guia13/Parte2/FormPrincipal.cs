@@ -19,7 +19,16 @@ namespace Parte2
         public FormPrincipal()
         {
             InitializeComponent();
-            
+            //test
+            double costoBase = 0d;
+            double costoIVA = 0d;
+            double costoTotal = 0d;
+            c.Despachar(3137, 126, 1, true,  ref costoBase, ref costoIVA, ref costoTotal);
+            c.Despachar(3100, 25, 3, true, ref costoBase, ref costoIVA, ref costoTotal);
+            c.Despachar(3100, 125, 2, true, ref costoBase, ref costoIVA, ref costoTotal);
+            c.Despachar(3137, 123.1, 2, true, ref costoBase, ref costoIVA, ref costoTotal);
+            c.Despachar(3567, 45.7, 1, true, ref costoBase, ref costoIVA, ref costoTotal);
+            c.Despachar(4564, 12.5, 1, true, ref costoBase, ref costoIVA, ref costoTotal);
         }
 
         private void btnAtender_Click(object sender, EventArgs e)
@@ -89,7 +98,7 @@ namespace Parte2
             fVer.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnVerResumenFinal_Click(object sender, EventArgs e)
         {
             FormVerResultados fVer = new FormVerResultados();
 

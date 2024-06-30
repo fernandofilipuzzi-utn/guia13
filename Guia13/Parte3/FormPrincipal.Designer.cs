@@ -38,7 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbIdentificador = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnVerResumenFinal = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -150,22 +150,23 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnVerResumenFinal
             // 
-            this.button2.Location = new System.Drawing.Point(192, 18);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(210, 52);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Ver resumen final";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnVerResumenFinal.Location = new System.Drawing.Point(192, 18);
+            this.btnVerResumenFinal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnVerResumenFinal.Name = "btnVerResumenFinal";
+            this.btnVerResumenFinal.Size = new System.Drawing.Size(210, 52);
+            this.btnVerResumenFinal.TabIndex = 7;
+            this.btnVerResumenFinal.Text = "Ver resumen final";
+            this.btnVerResumenFinal.UseVisualStyleBackColor = true;
+            this.btnVerResumenFinal.Click += new System.EventHandler(this.btnVerResumenFinal_Click);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 396);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnVerResumenFinal);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtender);
@@ -193,7 +194,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbIdentificador;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnVerResumenFinal;
     }
 }
 

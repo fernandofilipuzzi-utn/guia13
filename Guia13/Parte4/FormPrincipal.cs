@@ -18,6 +18,14 @@ namespace Parte4
         public FormPrincipal()
         {
             InitializeComponent();
+
+            //test
+            c.Despachar(3137, 126, 1, true);
+            c.Despachar(3100, 25, 3, true);
+            c.Despachar(3100, 125, 2, true);
+            c.Despachar(3137, 123.1, 2, true);
+            c.Despachar(3567, 45.7, 1, true);
+            c.Despachar(4564, 12.5, 1, true);
         }
 
         private void btnAtender_Click(object sender, EventArgs e)
@@ -89,5 +97,6 @@ namespace Parte4
 
             fVer.ShowDialog();
         }
+
     }
 }

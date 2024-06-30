@@ -173,7 +173,7 @@ namespace Parte2.Models
                 for (int m = n + 1; m < cantidad; m++)
                 {
                     //int cps = CodigosPostales[m];
-                    int ms = CodigosPostales[m]; //corrección: indice Siguiente
+                    int ms = idxs[m]; //corrección: indice Siguiente
                     //if (cpn > cps)
                     if(CodigosPostales[ns] > CodigosPostales[ms])
                     {
